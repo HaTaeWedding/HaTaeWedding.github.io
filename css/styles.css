@@ -11395,43 +11395,50 @@ header.masthead p {
 
 
 /* 기본 스타일 */
-.info {
-  font-size: 0.9rem;
+.info-title {
+  font-size: 1rem;
   display: block;
-  text-align: left !important;
-  margin-bottom: 1rem; /* 각 줄 사이에 약간의 간격 추가 */
+  text-align: left;
+  margin-bottom: 0.5rem;
   position: relative;
   padding-left: 1.25rem;
+  font-weight: bold;
 }
 
-.info i {
-  margin-right: 1rem; /* 아이콘과 텍스트 사이에 약간의 간격 추가 */
+.info-title i {
+  margin-right: 0.5rem;
   position: absolute;
   left: 0;
   top: 0;
 }
 
-/* 첫 번째 .info의 스타일 */
-.info:first-of-type {
-  font-weight: bold;
-}
-
-/* 두 번째 .info의 스타일 */
-.info:nth-of-type(2) {
+.info-detail {
+  font-size: 0.9rem;
+  display: block;
+  text-align: left;
+  margin-bottom: 1rem; /* 각 줄 사이에 약간의 간격 추가 */
   padding-left: 2.5rem;
   font-weight: normal;
 }
 
 /* 992px 이상일 때 적용되는 스타일 */
 @media (min-width: 992px) {
-  .info {
+  .info-title {
     font-size: 1.2rem;
+  }
+
+  .info-detail {
+    font-size: 1.1rem;
   }
 }
 
 /* 1200px 이상일 때 적용되는 스타일 */
 @media (min-width: 1200px) {
-  .info {
+  .info-title {
     font-size: 1.2rem;
+  }
+
+  .info-detail {
+    font-size: 1.1rem;
   }
 }
