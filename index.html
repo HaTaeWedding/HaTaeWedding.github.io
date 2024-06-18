@@ -58,6 +58,29 @@
         document.body.removeChild(textarea);
         alert("["+copyT+"]" + " 복사완료\n필요한 곳에 붙여넣기 하세요!");
     }
+
+    // 모달 열기 함수
+    function openModal(imageSrc) {
+        var modal = document.getElementById("myModal");
+        var modalImg = document.getElementById("modalImage");
+        modal.style.display = "block";
+        modalImg.src = imageSrc;
+    }
+
+    // 모달 닫기 함수
+    function closeModal() {
+        var modal = document.getElementById("myModal");
+        modal.style.display = "none";
+    }
+
+    // 모달 외부 클릭 시 닫기
+    window.onclick = function(event) {
+        var modal = document.getElementById("myModal");
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+
 </script>
 
 <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.2.0/kakao.min.js"
@@ -290,29 +313,40 @@
             <div class="col-lg-8 col-xl-6 text-center">
                 <h2 class="mt-4">안내사항</h2>
                 <hr class="divider divider-light" />
-                    <img style="width: 95%; text-align: center" class="mb-3" src="assets/img/minimap.png" alt="..." />
-                
-                    <div class="info-section">
-                      <span class="info-title"><i class="fas fa-info-circle"></i>주차장 관련</span>
-                      <span class="info-detail">- 호텔 모든 주차장은 당일 오후 5시까지 무료 주차 가능합니다.</span>
-                      <span class="info-detail">- 지상 주차장 10여대, 기계식 주차장 50여대</span>
-                      <span class="info-detail">- P1 주차장: 20여대, P2 주차장: 20여대, P3 주차장: 30여대</span>
-                      <span class="info-detail">- P3 주차장은 출입로 경사가 가파르므로 주의 바랍니다.</span>
-                    </div>
-                
-                    <div class="info-section">
-                      <span class="info-title"><i class="fas fa-info-circle"></i>버스 관련</span>
-                      <span class="info-detail">- 제주도청 신제주로터리(서) 하차 후 도보 5분<br>&emsp;315, 316, 325, 326, 332, 365, 370</span>
-                      <span class="info-detail">- 수협제주도지회(북) 하차 후 도보 2분<br>&emsp;325, 326, 335, 370</span>
-                    </div>
-                
-                    <div class="info-section">
-                      <span class="info-title"><i class="fas fa-info-circle"></i>피로연 장소 관련</span>
-                      <span class="info-detail">- 본식이 끝난 후 편안한 식사 자리를 가질 수 있도록 3층 홀과 1층 오픈홀에서도 피로연이 진행됩니다.</span>
-                      <span class="info-detail">- 신랑 신부의 친척 및 양가 부모 지인 분들께서는 3층 홀</span>
-                        <span class="info-detail">- 신랑 신부 친구분들 께서는 1층 에서 피로연을 즐기시면 감사하겠습니다.</span>
-                    
-                    </div>
+                <img style="width: 95%; text-align: center" class="mb-3" src="assets/img/minimap.png" alt="..." />
+
+                <div class="info-section">
+                    <span class="info-title"><i class="fas fa-info-circle"></i>주차장 관련</span>
+                    <span class="info-detail">- 호텔 모든 주차장은 당일 오후 5시까지 무료 주차 가능합니다.</span>
+                    <span class="info-detail">- 지상 주차장 10여대, 기계식 주차장 50여대</span>
+                    <span class="info-detail">- P1 주차장: 20여대, P2 주차장: 20여대, P3 주차장: 30여대</span>
+                    <span class="info-detail">- P3 주차장은 출입로 경사가 가파르므로 주의 바랍니다.</span>
+                </div>
+
+                <div class="info-section">
+                    <span class="info-title"><i class="fas fa-info-circle"></i>버스 관련</span>
+                    <span class="info-detail">- 제주도청 신제주로터리(서) 하차 후 도보 5분<br>&emsp;315, 316, 325, 326, 332, 365, 370, 465, 466</span>
+                    <button class="btn-xl mb-4" onclick="openModal('assets/img/bus_1.png')"></i>
+                        <span class="text-muted">경로보기</span>
+                    </button>
+                    <span class="info-detail">- 수협제주도지회(북) 하차 후 도보 2분<br>&emsp;325, 326, 335, 370, 454</span>
+                    <button class="btn-xl mb-4" onclick="openModal('assets/img/bus_2.png')"></i>
+                        <span class="text-muted">경로보기</span>
+                    </button>
+                </div>
+
+                <div id="myModal" class="modal">
+                    <span class="close" onclick="closeModal()">&times;</span>
+                    <img class="modal-content" id="modalImage">
+                </div>
+
+                <div class="info-section">
+                    <span class="info-title"><i class="fas fa-info-circle"></i>피로연 장소 관련</span>
+                    <span class="info-detail">- 본식이 끝난 후 편안한 식사 자리를 가질 수 있도록 3층 홀과 1층 오픈홀에서도 피로연이 진행됩니다.</span>
+                    <span class="info-detail">- 신랑 신부의 친척 및 양가 부모 지인 분들께서는 3층 홀</span>
+                    <span class="info-detail">- 신랑 신부 친구분들 께서는 1층 에서 피로연을 즐기시면 감사하겠습니다.</span>
+
+                </div>
             </div>
         </div>
     </div>
