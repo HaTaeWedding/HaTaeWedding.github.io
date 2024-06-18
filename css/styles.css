@@ -11442,3 +11442,34 @@ header.masthead p {
     font-size: 1.1rem;
   }
 }
+
+/* 모달 스타일 */
+.modal {
+  display: none; /* 기본적으로 숨김 */
+  position: fixed; /* 창에 고정 */
+  z-index: 1; /* 앞에 오도록 설정 */
+  left: 0;
+  top: 15%;
+  width: 100%; /* 전체 너비 */
+  height: 100%; /* 전체 높이 */
+  overflow: auto; /* 스크롤바 */
+  background-color: rgba(0, 0, 0, 0.5); /* 반투명 배경 */
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
