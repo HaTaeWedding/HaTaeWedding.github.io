@@ -3777,6 +3777,7 @@ textarea.form-control-lg {
   display: block;
 }
 
+/* 네비게이션 바 스타일 */
 .navbar {
   --bs-navbar-padding-x: 0;
   --bs-navbar-padding-y: 0.5rem;
@@ -10929,36 +10930,34 @@ body {
   height: 100%;
 }
 
-.page-section {
-  padding: 1rem 0;
+/*화면 서서히 보이게 설정*/
+
+/*.page-section {*/
+/*  opacity: 0;*/
+/*  transform: translateY(20px);*/
+/*  transition: opacity 1.5s ease-out, transform 1.5s ease-out;*/
+/*}*/
+
+/*.page-section.visible {*/
+/*  opacity: 1;*/
+/*  transform: translateY(0);*/
+/*}*/
+
+.fade-in-element {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+}
+
+.fade-in-element.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .text-white-75 {
   color: rgba(255, 255, 255, 0.75) !important;
 }
 
-.btn-xl {
-  padding: 0.5rem 1.25rem;
-  font-size: 0.85rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  border: none;
-  border-radius: 10rem;
-}
-
-@media (min-width: 992px) and (max-width: 1199.98px) {
-  .btn-xl {
-    padding: 0.55rem 1.3rem;
-    font-size: 0.9rem;
-  }
-}
-
-@media (min-width: 1200px) {
-  .btn-xl {
-    padding: 0.6rem 1.4rem;
-    font-size: 0.95rem;
-  }
-}
 
 hr.divider {
   height: 0.2rem;
@@ -11050,7 +11049,7 @@ header.masthead h1, header.masthead .h1 {
 header.masthead p {
   font-size: 1rem;
 }
-#name {
+.name {
   font-size: 1.7rem;
 }
 #and {
@@ -11166,10 +11165,10 @@ header.masthead p {
   }
 }
 
-#iconMar {
+.iconMar {
   margin-right:2.5rem;
 }
-#iconMarPar {
+.iconMarPar {
   margin-right:1rem;
 }
 #iconMarWed {
@@ -11393,6 +11392,67 @@ header.masthead p {
   box-sizing: border-box;
 }
 
+.btn-xl {
+  flex-shrink: 0; /* 버튼 크기가 줄어들지 않도록 설정 */
+  padding: 0.375rem 1rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  border: 2px solid #ccc;
+  border-radius: 10rem;
+  background-color: #fff;
+  color: #333;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  white-space: nowrap; /* 버튼 텍스트가 줄 바꿈되지 않도록 설정 */
+}
+
+.btn-xl img {
+  margin-right: 8px;
+}
+
+.btn-xl i {
+  margin-right: 8px;
+}
+
+/* 호버 효과 */
+.btn-xl:hover {
+  background-color: #f7f7f7;
+  border-color: #999;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transform: translateY(-1px);
+}
+
+/* 992px 이상 1199.98px 이하 화면에서의 버튼 스타일 */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .btn-xl {
+    padding: 0.55rem 1.3rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* 1200px 이상 화면에서의 버튼 스타일 */
+@media (min-width: 1200px) {
+  .btn-xl {
+    padding: 0.6rem 1.4rem;
+    font-size: 0.95rem;
+  }
+}
+
+.no-underline {
+  text-decoration: none;
+}
+
+/* center-container 클래스 추가 */
+.center-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
 
 /* 기본 스타일 */
 .info-title {
@@ -11445,31 +11505,280 @@ header.masthead p {
 
 /* 모달 스타일 */
 .modal {
-  display: none; /* 기본적으로 숨김 */
-  position: fixed; /* 창에 고정 */
-  z-index: 1; /* 앞에 오도록 설정 */
+  display: none;
+  position: fixed;
+  z-index: 1;
   left: 0;
-  top: 15%;
-  width: 100%; /* 전체 너비 */
-  height: 100%; /* 전체 높이 */
-  overflow: auto; /* 스크롤바 */
-  background-color: rgba(0, 0, 0, 0.5); /* 반투명 배경 */
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .modal-content {
-  margin: auto;
-  display: block;
-  width: 80%;
-  max-width: 700px;
+  margin: 10% auto;
+  padding: 20px;
+  width: 90%;
+  max-width: 600px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
 }
 
 .close {
-  position: absolute;
-  top: 15px;
-  right: 35px;
   color: #fff;
-  font-size: 40px;
+  background-color: #333;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 28px;
   font-weight: bold;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
 }
 
+.close:hover,
+.close:focus {
+  background-color: #555;
+  outline: none;
+}
+
+/* 모바일 대응 */
+@media (max-width: 600px) {
+  .modal-content {
+    width: 95%;
+    margin: 20% auto; /* 네비게이션 바 아래에 위치하도록 설정 */
+    padding: 10px;
+  }
+
+  .close {
+    font-size: 24px;
+    top: 5px;
+    right: 5px;
+  }
+}
+
+/* 태블릿 대응 */
+@media (min-width: 601px) and (max-width: 991.98px) {
+  .modal-content {
+    width: 85%;
+    margin: 12% auto; /* 네비게이션 바 아래에 위치하도록 설정 */
+    padding: 15px;
+  }
+}
+
+/* 중간 화면 대응 */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .modal-content {
+    width: 75%;
+    margin: 10% auto; /* 네비게이션 바 아래에 위치하도록 설정 */
+    padding: 20px;
+  }
+}
+
+/* 큰 화면 대응 */
+@media (min-width: 1200px) {
+  .modal-content {
+    width: 60%;
+    margin: 5% auto;
+    padding: 25px;
+  }
+}
+
+
+.mar-1 {
+  margin-right: 8px;
+}
+
+/* 계좌번호 모달 디자인 */
+details {
+  margin: 5px 0 10px;
+}
+
+details > summary {
+  border-radius: 10px;
+  cursor: pointer;
+  padding: 10px;
+  font-weight: bold;
+  color: #555;
+  list-style: none;
+}
+
+details > summary::-webkit-details-marker {
+  transform: rotate3d(0, 0, 1, 90deg);
+  transition: transform 0.25s;
+}
+
+details[open] > summary::-webkit-details-marker {
+  transform: rotate3d(0, 0, 1, 180deg);
+}
+
+details[open] > summary ~ * {
+  animation: reveal 0.8s;
+  border: 1px solid #ddd; /* 테두리 추가 */
+  border-radius: 10px; /* 둥근 모서리 */
+  padding: 15px; /* 패딩 추가 */
+  background-color: #f9f9f9; /* 배경색 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
+  margin-top: 10px; /* 위쪽 간격 추가 */
+}
+
+/* 기존 스타일 유지 */
+.tpt {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px; /* 텍스트와 버튼 사이의 간격 추가 */
+  flex-wrap: nowrap; /* nowrap으로 설정하여 버튼이 항상 텍스트 옆에 위치하도록 함 */
+}
+
+.tpt .account-info {
+  flex: 1;
+  min-width: 0; /* flexbox 아이템이 줄 바꿈을 하지 않도록 설정 */
+  white-space: nowrap; /* 텍스트가 줄 바꿈 되지 않도록 설정 */
+  overflow: hidden; /* 텍스트가 넘칠 경우 숨김 */
+  text-overflow: ellipsis; /* 텍스트가 넘칠 경우 생략 부호(...) 표시 */
+}
+
+.btn-xl {
+  flex-shrink: 0; /* 버튼 크기가 줄어들지 않도록 설정 */
+  padding: 0.375rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  border: 2px solid #ccc;
+  border-radius: 10rem;
+  background-color: #fff;
+  color: #333;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  white-space: nowrap; /* 버튼 텍스트가 줄 바꿈되지 않도록 설정 */
+}
+
+.btn-xl i {
+  margin-right: 8px;
+}
+
+.btn-xl:hover {
+  background-color: #f7f7f7;
+  border-color: #999;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transform: translateY(-1px);
+}
+
+/* 반응형 스타일 */
+@media (max-width: 600px) {
+  .tpt {
+    flex-wrap: wrap; /* 줄 바꿈을 허용하여 모바일에서도 레이아웃이 깨지지 않도록 함 */
+    gap: 5px; /* 모바일에서 텍스트와 버튼 사이의 간격 조정 */
+  }
+
+  .tpt .account-info {
+    flex: 1 1 auto; /* 모바일에서 텍스트가 전체 너비를 차지하도록 설정 */
+    white-space: normal; /* 텍스트가 줄 바꿈 되도록 설정 */
+    margin-bottom: 5px; /* 텍스트와 버튼 사이의 간격 조정 */
+  }
+
+  .btn-xl {
+    flex: 0 0 auto; /* 버튼 크기를 고정시킴 */
+    width: auto;
+    font-size: 0.75rem; /* 모바일에서 버튼 폰트 크기 조정 */
+  }
+}
+
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -30px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+
+/* 토스트 메시지 스타일 */
+.toast {
+  z-index: 9999; /* 높은 z-index 값 설정 */
+  visibility: hidden; /* 메시지가 숨겨진 상태 */
+  min-width: 250px;
+  max-width: 80%; /* 모바일에서 잘리지 않도록 최대 너비 설정 */
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  top: 15%; /* 화면 상단에 위치 */
+  font-size: 17px;
+  transform: translateX(-50%) translateY(-200%); /* 처음에 화면 밖에 위치 */
+  transition: transform 0.5s ease, opacity 0.5s ease; /* 애니메이션 효과 */
+  opacity: 0;
+}
+
+.toast.show {
+  visibility: visible; /* 메시지를 표시 */
+  transform: translateX(-50%) translateY(0); /* 화면 안으로 이동 */
+  opacity: 1;
+}
+
+.toast.hide {
+  visibility: hidden;
+  transform: translateX(-50%) translateY(-200%); /* 다시 화면 밖으로 이동 */
+  opacity: 0;
+}
+
+@keyframes fadein {
+  from { top: 0; opacity: 0; }
+  to { top: 15%; opacity: 1; }
+}
+
+@keyframes fadeout {
+  from { top: 15%; opacity: 1; }
+  to { top: 0; opacity: 0; }
+}
+
+/* 반응형 스타일 */
+@media (max-width: 600px) {
+  .toast {
+    font-size: 14px; /* 모바일에서 폰트 크기 조정 */
+    padding: 12px; /* 모바일에서 패딩 조정 */
+  }
+}
+
+@media (min-width: 601px) and (max-width: 991.98px) {
+  .toast {
+    font-size: 15px; /* 태블릿에서 폰트 크기 조정 */
+    padding: 14px; /* 태블릿에서 패딩 조정 */
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .toast {
+    font-size: 16px; /* 중간 화면에서 폰트 크기 조정 */
+    padding: 15px; /* 중간 화면에서 패딩 조정 */
+  }
+}
+
+@media (min-width: 1200px) {
+  .toast {
+    font-size: 17px; /* 큰 화면에서 폰트 크기 조정 */
+    padding: 16px; /* 큰 화면에서 패딩 조정 */
+  }
+}
