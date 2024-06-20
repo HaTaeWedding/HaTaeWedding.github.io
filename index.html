@@ -7,8 +7,9 @@
     <meta name="color-scheme" content="light only"/>
     <meta name="supported-color-schemes" content="light"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:title" content="청첩장 제목">
-    <meta property="og:description" content="결혼 인사말">
+    <!--링크 복사 시, 이미지와 제목, 설명을 설정.-->
+    <meta property="og:title" content="태훈&하영 결혼합니다.">
+    <meta property="og:description" content="10/12(토), 제주썬호텔 3층 대연회장">
     <meta property="og:image" content="https://HaTaeWedding.github.io/assets/img/bg-masthead.jpg">
 
 
@@ -434,12 +435,13 @@
 <script>
     imgUrl = 'https://HaTaeWedding.github.io';
 
+    // 카카오톡 공유시 이미지, 제목, 설명, 링크 설정
     Kakao.Share.createDefaultButton({
         container: '#kakaotalk-sharing-btn',
         objectType: 'feed',
         content: {
-            title: '청첩장 제목',
-            description: '결혼 인사말',
+            title: '태훈&하영 결혼합니다.',
+            description: '10/12(토), 제주썬호텔 3층 대연회장',
             imageUrl: imgUrl + '/assets/img/share11.jpg',
             link: {
                 // [내 애플리케이션] > [플랫폼] 에서 등록한 사이트 도메인과 일치해야 함
