@@ -11049,7 +11049,7 @@ header.masthead h1, header.masthead .h1 {
 header.masthead p {
   font-size: 1rem;
 }
-.name {
+#name {
   font-size: 1.7rem;
 }
 #and {
