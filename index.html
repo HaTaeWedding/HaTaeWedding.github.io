@@ -10,22 +10,7 @@
     <!--링크 복사 시, 이미지와 제목, 설명을 설정.-->
     <meta property="og:title" content="태훈&하영 결혼합니다.">
     <meta property="og:description" content="10/12(토), 제주썬호텔 3층 대연회장">
-    <meta property="og:image" content="https://HaTaeWedding.github.io/assets/img/bg-masthead.jpg">
-
-
-    <style> /*계좌번호 열고 닫기*/
-    details { margin:5px 0 10px; }
-    details > summary {border-radius:5px; cursor:pointer;}
-    details > summary::-webkit-details-marker {transform:rotate3d(0, 0, 1, 90deg); transition:transform 0.25s;}
-    details[open] > summary::-webkit-details-marker { transform:rotate3d(0, 0, 1, 180deg);}
-    details[open] > summary ~ * { animation:reveal 0.8s;}
-    .tpt { background:#ede9e6; color:#333; margin:5px 0 10px; padding:5px 10px; line-height:25px; border-radius:5px; box-shadow: 1px 1px 2px gray;}
-
-    @keyframes reveal {
-        from { opacity:0; transform:translate3d(0, -30px, 0); }
-        to { opacity:1; transform:translate3d(0, 0, 0); }
-    }
-    </style>
+    <meta property="og:image" content="https://hataeWedding.github.io/assets/img/bg-masthead.jpg">
 
 
     <title>태훈 하영 결혼식에 초대합니다.</title>
@@ -43,45 +28,10 @@
     <!-- Core theme CSS (includes Bootstrap)-->
     <!-- <link href="/_custom/mobile/css/styles.css" rel="stylesheet" type="text/css"/> -->
     <link href="css/styles.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!--아이콘-->
 
 </head>
 <body id="page-top">
-<script>
-    function clip(copyT){
-        var url = '';
-        var textarea = document.createElement("textarea");
-        document.body.appendChild(textarea);
-        url = copyT;
-        textarea.value = url;
-        textarea.select();
-        document.execCommand("copy");
-        document.body.removeChild(textarea);
-        alert("["+copyT+"]" + " 복사완료\n필요한 곳에 붙여넣기 하세요!");
-    }
-
-    // 모달 열기 함수
-    function openModal(imageSrc) {
-        var modal = document.getElementById("myModal");
-        var modalImg = document.getElementById("modalImage");
-        modal.style.display = "block";
-        modalImg.src = imageSrc;
-    }
-
-    // 모달 닫기 함수
-    function closeModal() {
-        var modal = document.getElementById("myModal");
-        modal.style.display = "none";
-    }
-
-    // 모달 외부 클릭 시 닫기
-    window.onclick = function(event) {
-        var modal = document.getElementById("myModal");
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
-    }
-
-</script>
 
 <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.2.0/kakao.min.js"
         integrity="sha384-x+WG2i7pOR+oWb6O5GV5f1KN2Ko6N7PTGPS7UlasYWNxZMKQA63Cj/B2lbUmUfuC" crossorigin="anonymous"></script>
@@ -89,10 +39,12 @@
     Kakao.init('0297f0c4ff580bd9c312f83fdc64a6d3'); // 사용하려는 앱의 JavaScript 키 입력
 </script>
 
+<script src="https://developers.band.us/js/share/loader.js" async></script>
+
 
 <!-- Navigation-->
 <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
-    <div class="container px-4 px-lg-5">
+    <div class="container px-4 px-lg-5 fade-in-element">
         <a class="navbar-brand" href="#page-top">청첩장 메인</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
@@ -108,7 +60,9 @@
 </nav>
 
 <header class="masthead">
-    <div class="container px-4 px-lg-5 h-100">
+    <div id="toast" class="toast">복사 완료</div>
+
+    <div class="container px-4 px-lg-5 h-100 fade-in-element">
         <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
             <div class="col-lg-8 align-self-baseline">
                 <img class="img_main mb-3" src="assets/img/main.jpg" alt="..." />
@@ -127,7 +81,7 @@
 
 <!-- About-->
 <section class="page-section bg-primary" id="about">
-    <div class="container px-4 px-lg-5">
+    <div class="container px-4 px-lg-5 fade-in-element">
         <div class="row gx-4 gx-lg-5 justify-content-center">
             <div class="col-lg-8 text-center">
                 <h2 class="size1_2 mt-5 mb-6">초대장(INVITATION)</h2>
@@ -142,14 +96,14 @@
 <!-- Services-->
 <section class="page-section" id="services">
 
-    <div class="container px-4 px-lg-5">
+    <div class="container px-4 px-lg-5 fade-in-element">
 
         <h2 class="text-center mt-5">연락처</h2>
         <hr class="divider divider-light" />
 
         <div class="box1 mt-3 text-center">
             <h3 class="h4 mb-3">신랑 고태훈</h3>
-            <a href="tel:01098994999"><i class="bi bi-telephone fs-2 mb-3 text-muted"></i></a>
+            <a href="tel:01098994999"><i class="iconMar bi bi-telephone fs-2 mb-3 text-muted"></i></a>
             <a href="sms:01098994999"><i class="bi bi-chat-dots fs-2 mb-3 text-muted"></i></a>
 
 
@@ -157,7 +111,7 @@
 
         <div class="box2 mt-3 text-center">
             <h3 class="h4 mb-3">신부 김하영</h3>
-            <a href="tel:01046450722"><i id="iconMar" class="bi bi-telephone fs-2 mb-3 text-muted"></i></a>
+            <a href="tel:01046450722"><i class="iconMar bi bi-telephone fs-2 mb-3 text-muted"></i></a>
             <a href="sms:01046450722"><i class="bi bi-chat-dots fs-2 mb-3 text-muted"></i></a>
         </div>
 
@@ -167,7 +121,7 @@
                 <span class="h3 text-muted mb-0">아버지</span>
                 <span class="parentName text-muted mb-0">고석진</span>
             </p>
-            <a href="tel:01036924999"><i class="bi bi-telephone fs-2-par mb-3 text-muted"></i></a>
+            <a href="tel:01036924999"><i class="iconMarPar bi bi-telephone fs-2-par mb-3 text-muted"></i></a>
             <a href="sms:01036924999"><i class="bi bi-chat-dots fs-2-par mb-3 text-muted"></i></a>
         </div>
 
@@ -187,7 +141,7 @@
                 <span class="h3 text-muted mb-0">어머니</span>
                 <span class="parentName text-muted mb-0">김원숙</span>
             </p>
-            <a href="tel:01032315261"><i class="bi bi-telephone fs-2-par mb-5 text-muted"></i></a>
+            <a href="tel:01032315261"><i class="iconMarPar bi bi-telephone fs-2-par mb-5 text-muted"></i></a>
             <a href="sms:01032315261"><i class="bi bi-chat-dots fs-2-par mb-5 text-muted"></i></a>
         </div>
 
@@ -197,23 +151,14 @@
                 <span class="h3 text-muted mb-0">어머니</span>
                 <span class="parentName text-muted mb-0">박민숙</span>
             </p>
-            <a href="tel:01035599398"><i class="bi bi-telephone fs-2-par mb-5 text-muted"></i></a>
+            <a href="tel:01035599398"><i class="iconMarPar bi bi-telephone fs-2-par mb-5 text-muted"></i></a>
             <a href="sms:01035599398"><i class="bi bi-chat-dots fs-2-par mb-5 text-muted"></i></a>
         </div>
-
-
-        <!-- <div class="box3 mt-5 text-center">
-            <h3 class="text-muted h3 mb-1"></h3>
-          <p>
-               <span class="h3 text-muted mb-0"></span>
-                <span class="parentName text-muted mb-0"></span>
-          </p>
-        </div> -->
     </div>
 </section>
 <!-- Portfolio-->
 <div id="portfolio">
-    <div class="container-fluid p-0">
+    <div class="container-fluid p-0 fade-in-element">
         <div class="row g-0">
             <div class="col-lg-4 col-sm-6">
                 <a class="portfolio-box" href="assets/img/portfolio/fullsize/1.jpg" title="Project Name">
@@ -274,41 +219,55 @@
 </div>
 <!-- Call to action-->
 <section class="page-section" id="place">
-    <div class="container px-4 px-lg-5 text-center">
+    <div class="container px-4 px-lg-5 text-center fade-in-element">
         <h2 class="text-center mt-6">오시는 길</h2>
         <hr class="divider divider-light" />
 
         <div id="map" class="mb-3"></div>
         <div class="btn-container">
-            <a target="_blank" class="btn btn-light btn-xl mb-2" href="https://kko.to/_m3grnSdBj">카카오맵 보기</a>
-            <a target="_blank" class="btn btn-light btn-xl mb-2" href="https://naver.me/Go57I9QC">네이버맵 보기</a>
-            <a target="_blank" class="btn btn-light btn-xl mb-2" href="https://www.google.com/maps/place/%EC%A0%9C%EC%A3%BC%ED%8A%B9%EB%B3%84%EC%9E%90%EC%B9%98%EB%8F%84+%EC%A0%9C%EC%A3%BC%EC%8B%9C+%ED%8A%B9%EB%B3%84%EC%9E%90%EC%B9%98%EB%8F%84+%EC%97%B0%EB%8F%99+%EC%82%BC%EB%AC%B4%EB%A1%9C+67+%EC%A0%9C%EC%A3%BC%EC%8D%AC%ED%98%B8%ED%85%94/@33.4899984,126.4938714,17z/data=!4m9!1m2!2m1!1z7KCc7KO8IOyNrO2YuO2FlA!3m5!1s0x350cfb0e25ab8ab7:0xe205d6003bb72c38!8m2!3d33.4899984!4d126.4938714!16s%2Fg%2F1tpppqp0?source=lnms">구글맵 보기</a>
-            <a target="_blank" class="btn btn-light btn-xl mb-2" href="https://tmap.life/cfac5b42">티맵 보기</a>
-            <a class="btn btn-light btn-xl mb-2" href="#services">도저히 모르겠다.</a>
+            <a target="_blank" class="btn-xl mb-2" href="https://kko.to/_m3grnSdBj">카카오맵 보기</a>
+            <a target="_blank" class="btn-xl mb-2" href="https://naver.me/Go57I9QC">네이버맵 보기</a>
+            <a target="_blank" class="btn-xl mb-2" href="https://www.google.com/maps/place/%EC%A0%9C%EC%A3%BC%ED%8A%B9%EB%B3%84%EC%9E%90%EC%B9%98%EB%8F%84+%EC%A0%9C%EC%A3%BC%EC%8B%9C+%ED%8A%B9%EB%B3%84%EC%9E%90%EC%B9%98%EB%8F%84+%EC%97%B0%EB%8F%99+%EC%82%BC%EB%AC%B4%EB%A1%9C+67+%EC%A0%9C%EC%A3%BC%EC%8D%AC%ED%98%B8%ED%85%94/@33.4899984,126.4938714,17z/data=!4m9!1m2!2m1!1z7KCc7KO8IOyNrO2YuO2FlA!3m5!1s0x350cfb0e25ab8ab7:0xe205d6003bb72c38!8m2!3d33.4899984!4d126.4938714!16s%2Fg%2F1tpppqp0?source=lnms">구글맵 보기</a>
+            <a target="_blank" class="btn-xl mb-2" href="https://tmap.life/cfac5b42">티맵 보기</a>
+            <a class="btn-xl mb-2" href="#services">도저히 모르겠다.</a>
         </div>
 
         <p class="mt-3">
-            <span class="size1_2">제주썬호텔 3층 대연회장</span>
-            </br></br>
+            <span class="size1_2">제주썬호텔 3층 대연회장</span><br><br>
             <span class="size0_9">제주 제주시 삼무로 67 제주 썬호텔</span>
-            <button class="btn btn-light btn-xl" onclick="clip('제주 제주시 삼무로 67 제주 썬호텔')"><i class="bi bi-clipboard"></i>
+        <div class="center-container mt-1">
+            <button class="btn-xl" onclick="clip('제주 제주시 삼무로 67 제주 썬호텔')">
+                <i class="bi bi-clipboard mar-1"></i>
                 <span class="text-muted">호텔 주소 복사</span>
             </button>
-            </br></br>
-            <span class="size0_9">064-741-8000</span>
-            <a href="tel:0647438393">
-                <button class="btn btn-light btn-xl"><i class="bi bi-telephone mar-1"></i>
+        </div><br>
+        <span class="size0_9">064-741-8000</span>
+        <div class="center-container mt-2">
+            <a href="tel:0647418000" class="no-underline">
+                <button class="btn-xl">
+                    <i class="bi bi-telephone mar-1"></i>
                     <span class="text-muted">호텔로 전화</span>
                 </button>
-            </a></br>
-            <span></span></br>
+            </a>
+        </div>
         </p>
     </div>
 
 </section>
 
 <section class="page-section bg-primary" id="info">
-    <div class="container px-4 px-lg-5">
+    <!-- 모달 구조 -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img id="modalImage" src="" alt="경로 이미지" style="width: 100%;">
+            <button class="btn-xl mt-2 mb-2" id="downloadButton">
+                <i class="bi bi-download mar-1"></i>
+                <span class="text-muted">이미지 다운로드</span>
+            </button>
+        </div>
+    </div>
+    <div class="container px-4 px-lg-5 fade-in-element">
         <div class="row gx-4 gx-lg-5 justify-content-center">
             <div class="col-lg-8 col-xl-6 text-center">
                 <h2 class="mt-4">안내사항</h2>
@@ -326,20 +285,18 @@
                 <div class="info-section">
                     <span class="info-title"><i class="fas fa-info-circle"></i>버스 관련</span>
                     <span class="info-detail">- 제주도청 신제주로터리(서) 하차 후 도보 5분<br>&emsp;315, 316, 325, 326, 332, 365, 370, 465, 466</span>
-                    <button class="btn-xl mb-4" onclick="openModal('assets/img/bus_1.png')"></i>
-                        <span class="text-muted">경로보기</span>
-                    </button>
+                    <div class="center-container mt-2">
+                        <button class="btn-xl mb-4" onclick="openModal('assets/img/bus_1.png')"></i>
+                            <span class="text-muted">경로보기</span>
+                        </button>
+                    </div>
                     <span class="info-detail">- 수협제주도지회(북) 하차 후 도보 2분<br>&emsp;325, 326, 335, 370, 454</span>
-                    <button class="btn-xl mb-4" onclick="openModal('assets/img/bus_2.png')"></i>
-                        <span class="text-muted">경로보기</span>
-                    </button>
+                    <div class="center-container mt-2">
+                        <button class="btn-xl mb-4" onclick="openModal('assets/img/bus_2.png')"></i>
+                            <span class="text-muted">경로보기</span>
+                        </button>
+                    </div>
                 </div>
-
-                <div id="myModal" class="modal">
-                    <span class="close" onclick="closeModal()">&times;</span>
-                    <img class="modal-content" id="modalImage">
-                </div>
-
                 <div class="info-section">
                     <span class="info-title"><i class="fas fa-info-circle"></i>피로연 장소 관련</span>
                     <span class="info-detail">- 본식이 끝난 후 편안한 식사 자리를 가질 수 있도록 3층 홀과 1층 오픈홀에서도 피로연이 진행됩니다.</span>
@@ -354,38 +311,48 @@
 
 <!-- Contact-->
 <section class="page-section">
-    <div class="container px-4 px-lg-5">
+    <div class="container px-4 px-lg-5 mb-5 fade-in-element">
         <div class="row gx-4 gx-lg-5 justify-content-center">
             <div class="col-lg-8 col-xl-6 text-center">
                 <h2 class="mt-4">마음 전하실 곳</h2>
                 <hr class="divider divider-light" />
                 <details>
-                    <summary class="text-muted mb-5 size1_2">신랑측 계좌번호 </summary>
-                    <div class="tpt">신랑 고태훈 농협은행 302-98994999-11 &emsp;
-                        <button class="btn btn-light btn-xl" onclick="clip('302-98994999-11')"><i class="bi bi-clipboard"></i>
+                    <summary class="text-muted mb-5 size1_2">신랑측 계좌번호</summary>
+                    <div class="tpt mb-2">
+                        <span class="account-info">신랑 고태훈 농협은행 302-98994999-11</span>
+                        <button class="btn-xl mb-2" onclick="clip('302-98994999-11')">
+                            <i class="bi bi-clipboard mar-1"></i>
                             <span class="text-muted">복사</span>
                         </button>
                     </div>
-                    <div class="tpt">아버지 고석진 제주은행 계좌번호 &emsp;
-                        <button class="btn btn-light btn-xl" onclick="clip('아버지 고석진 제주은행 계좌번호')"><i class="bi bi-clipboard"></i>
+                    <div class="tpt mb-2">
+                        <span class="account-info">아버지 고석진 제주은행 계좌번호</span>
+                        <button class="btn-xl mb-2" onclick="clip('아버지 고석진 제주은행 계좌번호')">
+                            <i class="bi bi-clipboard mar-1"></i>
                             <span class="text-muted">복사</span>
                         </button>
                     </div>
-                    <div class="tpt">어머니 김원숙 농협은행 계좌번호 &emsp;
-                        <button class="btn btn-light btn-xl" onclick="clip('어머니 김원숙 농협은행 계좌번호')"><i class="bi bi-clipboard"></i>
+                    <div class="tpt mb-2">
+                        <span class="account-info">어머니 김원숙 농협은행 계좌번호</span>
+                        <button class="btn-xl mb-2" onclick="clip('어머니 김원숙 농협은행 계좌번호')">
+                            <i class="bi bi-clipboard mar-1"></i>
                             <span class="text-muted">복사</span>
                         </button>
                     </div>
                 </details>
                 <details>
                     <summary class="text-muted mt-4 mb-5 size1_2">신부측 계좌번호</summary>
-                    <div class="tpt">신부 김하영 카카오뱅크 계좌번호 &emsp;
-                        <button class="btn btn-light btn-xl" onclick="clip('신부 김하영 카카오뱅크 계좌번호')"><i class="bi bi-clipboard"></i>
+                    <div class="tpt mb-2">
+                        <span class="account-info">신부 김하영 카카오뱅크 계좌번호</span>
+                        <button class="btn-xl mb-2" onclick="clip('신부 김하영 카카오뱅크 계좌번호')">
+                            <i class="bi bi-clipboard mar-1"></i>
                             <span class="text-muted">복사</span>
                         </button>
                     </div>
-                    <div class="tpt">어머니 박민숙 신한은행 계좌번호 &emsp;
-                        <button class="btn btn-light btn-xl" onclick="clip('어머니 박민숙 신한은행 계좌번호')"><i class="bi bi-clipboard"></i>
+                    <div class="tpt mb-5">
+                        <span class="account-info">어머니 박민숙 신한은행 계좌번호</span>
+                        <button class="btn-xl mb-2" onclick="clip('어머니 박민숙 신한은행 계좌번호')">
+                            <i class="bi bi-clipboard mar-1"></i>
                             <span class="text-muted">복사</span>
                         </button>
                     </div>
@@ -396,20 +363,29 @@
 </section>
 
 <section class="page-section bg-primary" id="share">
-    <div class="container px-4 px-lg-5">
+    <div class="container px-4 px-lg-5 fade-in-element">
         <div class="row gx-4 gx-lg-5 justify-content-center">
             <div class="col-lg-8 col-xl-6 text-center">
                 <h2 class="mt-4">공유하기</h2>
                 <hr class="divider divider-light" />
-                <button class="btn-xl" onclick="clip('https://HaTaeWedding.github.io')"><i class="bi bi-share mar-1"></i>
-                    <span class="text-muted">링크 복사</span>
-                </button>
-                <a id="kakaotalk-sharing-btn" href="javascript:;">
-                    <button type="button" class="btn-xl">
-                        <img src="https://developers.kakao.com/assets/img/about/logos/kakaotalksharing/kakaotalk_sharing_btn_medium.png" alt="카카오톡 공유 보내기 버튼" class="imgSize mar-1"/>
+                <div class="btn-container">
+                    <a id="kakaotalk-sharing-btn" href="javascript:;" class="btn-xl">
+                        <img src="https://developers.kakao.com/assets/img/about/logos/kakaotalksharing/kakaotalk_sharing_btn_medium.png" alt="카카오톡 공유" class="imgSize mar-1"/>
                         <span class="text-muted">카카오톡 공유</span>
+                    </a>
+                    <button type="button" class="btn-xl" onclick="shareToBand()">
+                        <img src="https://hataewedding.github.io/assets/img/naverBand.webp" alt="네이버밴드 공유" class="imgSize mar-1"/>
+                        <span class="text-muted">네이버밴드 공유</span>
                     </button>
-                </a>
+                    <button type="button" class="btn-xl" onclick="clip('https://hataewedding.github.io')">
+                        <i class="bi bi-share mar-1"></i>
+                        <span class="text-muted">링크 복사</span>
+                    </button>
+                    <button type="button" class="btn-xl" onclick="openModal('assets/img/frame.png')">
+                        <i class="fas fa-qrcode mar-1"></i>
+                        <span class="text-muted">QR코드</span>
+                    </button>
+                </div>
             </div>
         </div>
     </div>
@@ -433,40 +409,14 @@
 <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
 
 <script>
-    imgUrl = 'https://HaTaeWedding.github.io';
 
-    // 카카오톡 공유시 이미지, 제목, 설명, 링크 설정
-    Kakao.Share.createDefaultButton({
-        container: '#kakaotalk-sharing-btn',
-        objectType: 'feed',
-        content: {
-            title: '태훈&하영 결혼합니다.',
-            description: '10/12(토), 제주썬호텔 3층 대연회장',
-            imageUrl: imgUrl + '/assets/img/share11.jpg',
-            link: {
-                // [내 애플리케이션] > [플랫폼] 에서 등록한 사이트 도메인과 일치해야 함
-                mobileWebUrl: 'https://hataewedding.github.io',
-                webUrl: 'https://hataewedding.github.io',
-            },
-        },
-        buttons: [
-            {
-                title: '청첩장 보기',
-                link: {
-                    mobileWebUrl: 'https://hataewedding.github.io',
-                    webUrl: 'https://hataewedding.github.io',
-                },
-            },
-
-        ],
-    });
 </script>
 
 
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=0297f0c4ff580bd9c312f83fdc64a6d3"></script>
 <script>
 
-    imgUrl = 'https://HaTaeWedding.github.io';
+    imgUrl = 'https://hataewedding.github.io';
 
     var lat = 33.4897984; // 장소 위도
     var lng = 126.4938714; // 장소 경도
@@ -505,7 +455,7 @@
 
     // 커스텀 오버레이를 생성합니다
     var customOverlay = new kakao.maps.CustomOverlay({
-        position: new kakao.maps.LatLng(lat, lng),
+        position: new kakao.maps.LatLng(lat+0.00015, lng),
         content: content,
         yAnchor: 1
     });
