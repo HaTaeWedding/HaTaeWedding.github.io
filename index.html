@@ -9,8 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:title" content="청첩장 제목">
     <meta property="og:description" content="결혼 인사말">
-    <meta property="og:image" content="https://letsgit11.github.io/assets/img/main.jpg" />
-    <meta property="og:url" content="https://letsgit11.github.io/" />
+    <meta property="og:image" content="https://HaTaeWedding.github.io/assets/img/bg-masthead.jpg">
 
 
     <style> /*계좌번호 열고 닫기*/
@@ -149,7 +148,7 @@
 
         <div class="box1 mt-3 text-center">
             <h3 class="h4 mb-3">신랑 고태훈</h3>
-            <a href="tel:01098994999"><i id="iconMar" class="bi bi-telephone fs-2 mb-3 text-muted"></i></a>
+            <a href="tel:01098994999"><i class="bi bi-telephone fs-2 mb-3 text-muted"></i></a>
             <a href="sms:01098994999"><i class="bi bi-chat-dots fs-2 mb-3 text-muted"></i></a>
 
 
@@ -167,7 +166,7 @@
                 <span class="h3 text-muted mb-0">아버지</span>
                 <span class="parentName text-muted mb-0">고석진</span>
             </p>
-            <a href="tel:01036924999"><i id="iconMarPar" class="bi bi-telephone fs-2-par mb-3 text-muted"></i></a>
+            <a href="tel:01036924999"><i class="bi bi-telephone fs-2-par mb-3 text-muted"></i></a>
             <a href="sms:01036924999"><i class="bi bi-chat-dots fs-2-par mb-3 text-muted"></i></a>
         </div>
 
@@ -187,7 +186,7 @@
                 <span class="h3 text-muted mb-0">어머니</span>
                 <span class="parentName text-muted mb-0">김원숙</span>
             </p>
-            <a href="tel:01032315261"><i id="iconMarPar" class="bi bi-telephone fs-2-par mb-5 text-muted"></i></a>
+            <a href="tel:01032315261"><i class="bi bi-telephone fs-2-par mb-5 text-muted"></i></a>
             <a href="sms:01032315261"><i class="bi bi-chat-dots fs-2-par mb-5 text-muted"></i></a>
         </div>
 
@@ -197,7 +196,7 @@
                 <span class="h3 text-muted mb-0">어머니</span>
                 <span class="parentName text-muted mb-0">박민숙</span>
             </p>
-            <a href="tel:01035599398"><i id="iconMarPar" class="bi bi-telephone fs-2-par mb-5 text-muted"></i></a>
+            <a href="tel:01035599398"><i class="bi bi-telephone fs-2-par mb-5 text-muted"></i></a>
             <a href="sms:01035599398"><i class="bi bi-chat-dots fs-2-par mb-5 text-muted"></i></a>
         </div>
 
@@ -401,7 +400,7 @@
             <div class="col-lg-8 col-xl-6 text-center">
                 <h2 class="mt-4">공유하기</h2>
                 <hr class="divider divider-light" />
-                <button class="btn-xl" onclick="clip('letsgit11.github.io')"><i class="bi bi-share mar-1"></i>
+                <button class="btn-xl" onclick="clip('https://HaTaeWedding.github.io')"><i class="bi bi-share mar-1"></i>
                     <span class="text-muted">링크 복사</span>
                 </button>
                 <a id="kakaotalk-sharing-btn" href="javascript:;">
@@ -433,25 +432,27 @@
 <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
 
 <script>
+    imgUrl = 'https://HaTaeWedding.github.io';
+
     Kakao.Share.createDefaultButton({
         container: '#kakaotalk-sharing-btn',
         objectType: 'feed',
         content: {
             title: '청첩장 제목',
             description: '결혼 인사말',
-            imageUrl: 'https://letsgit11.github.io/assets/img/share.jpg',
+            imageUrl: imgUrl + '/assets/img/share11.jpg',
             link: {
                 // [내 애플리케이션] > [플랫폼] 에서 등록한 사이트 도메인과 일치해야 함
-                mobileWebUrl: 'https://letsgit11.github.io/',
-                webUrl: 'https://letsgit11.github.io/',
+                mobileWebUrl: 'https://hataewedding.github.io',
+                webUrl: 'https://hataewedding.github.io',
             },
         },
         buttons: [
             {
                 title: '청첩장 보기',
                 link: {
-                    mobileWebUrl: 'https://letsgit11.github.io',
-                    webUrl: 'https://letsgit11.github.io',
+                    mobileWebUrl: 'https://hataewedding.github.io',
+                    webUrl: 'https://hataewedding.github.io',
                 },
             },
 
@@ -462,6 +463,8 @@
 
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=0297f0c4ff580bd9c312f83fdc64a6d3"></script>
 <script>
+
+    imgUrl = 'https://HaTaeWedding.github.io';
 
     var lat = 33.4897984; // 장소 위도
     var lng = 126.4938714; // 장소 경도
@@ -475,7 +478,7 @@
     var map = new kakao.maps.Map(mapContainer, mapOption);
 
     // 마커 이미지 설정
-    var imageSrc = 'https://HaTaeWedding.github.io/assets/img/marker.png', // 마커이미지의 주소입니다
+    var imageSrc = imgUrl+'/assets/img/marker.png', // 마커이미지의 주소입니다
         imageSize = new kakao.maps.Size(70, 80), // 마커이미지의 크기입니다
         imageOption = { offset: new kakao.maps.Point(35, 80) }; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
 
