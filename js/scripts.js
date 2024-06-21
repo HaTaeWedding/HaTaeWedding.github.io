@@ -51,10 +51,10 @@ window.addEventListener('DOMContentLoaded', event => {
         });
     });
 
-    // Activate SimpleLightbox plugin for portfolio items
-    new SimpleLightbox({
-        elements: '#portfolio a.portfolio-box'
-    });
+    // // Activate SimpleLightbox plugin for portfolio items
+    // new SimpleLightbox({
+    //     elements: '#portfolio a.portfolio-box'
+    // });
 
 });
 
@@ -174,3 +174,69 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+    var portfolioSection = document.getElementById('portfolio');
+    var lastScale = 1;
+
+    function checkZoomLevel(event) {
+        var zoomLevel = window.visualViewport.scale;
+        if (zoomLevel > 1) {
+            portfolioSection.classList.add('zoomed');
+        } else {
+            portfolioSection.classList.remove('zoomed');
+        }
+    }
+
+    window.visualViewport.addEventListener('resize', checkZoomLevel);
+    window.addEventListener('scroll', checkZoomLevel);
+
+    // 초기 로딩 시에도 한 번 체크
+    checkZoomLevel();
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    // SimpleLightbox 초기화
+    var lightbox = new SimpleLightbox({
+        elements: '#portfolio a.portfolio-box'
+    });
+
+    var portfolioSection = document.getElementById('portfolio');
+
+    function checkZoomLevel() {
+        var zoomLevel = window.visualViewport.scale;
+        var modalImage = document.querySelector('.simple-lightbox img');
+
+        if (zoomLevel > 1) {
+            portfolioSection.classList.add('zoomed');
+            if (modalImage) {
+                modalImage.classList.add('zoomed');
+            }
+        } else {
+            portfolioSection.classList.remove('zoomed');
+            if (modalImage) {
+                modalImage.classList.remove('zoomed');
+            }
+        }
+    }
+
+    // 확대 이벤트 감지
+    window.visualViewport.addEventListener('resize', checkZoomLevel);
+    window.visualViewport.addEventListener('scroll', checkZoomLevel);
+
+    // 초기 로딩 시에도 한 번 체크
+    checkZoomLevel();
+
+    // SimpleLightbox 열릴 때 블러 효과 추가
+    lightbox.on('shown.simplelightbox', function() {
+        checkZoomLevel();
+    });
+
+    // SimpleLightbox 닫힐 때 블러 효과 제거
+    lightbox.on('closed.simplelightbox', function() {
+        var modalImage = document.querySelector('.simple-lightbox img');
+        portfolioSection.classList.remove('zoomed');
+        if (modalImage) {
+            modalImage.classList.remove('zoomed');
+        }
+    });
+});
