@@ -114,7 +114,7 @@ window.onclick = function(event) {
 }
 
 function shareToBand() {
-    var shareUrl = "https://HaTaeWedding.github.io"; // 공유할 URL
+    var shareUrl = "https://hataewedding.github.io"; // 공유할 URL
     var encodedShareUrl = encodeURIComponent(shareUrl);
     var bandAppUrl = `bandapp://create/post?text=${encodedShareUrl}`;
 
