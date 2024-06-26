@@ -11171,16 +11171,16 @@ header.masthead {
   background-size: cover;
 }
 header.masthead h1, header.masthead .h1 {
-  font-size: 2.5rem;
+  font-size: 2.8rem;
 }
 header.masthead p {
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 #name {
-  font-size: 1.7rem;
+  font-size: 1.9rem;
 }
 #and {
-  font-size: 0.8rem;
+  font-size: 1rem;
 }
 
 /* 모바일 화면 (최대 576px) */
@@ -11191,16 +11191,16 @@ header.masthead p {
     height: auto;
   }
   header.masthead h1, header.masthead .h1 {
-    font-size: 1.5rem;
+    font-size: 1.7rem;
   }
   header.masthead p {
-    font-size: 0.9rem;
+    font-size: 1.1rem;
   }
   #name {
-    font-size: 1.2rem;
+    font-size: 1.7rem;
   }
   #and {
-    font-size: 0.6rem;
+    font-size: 0.9rem;
   }
 }
 
@@ -11208,20 +11208,20 @@ header.masthead p {
 @media (min-width: 577px) and (max-width: 768px) {
   header.masthead {
     padding-top: 5rem;
-    padding-bottom: 3rem;
+    padding-bottom: 2.5rem;
     height: auto;
   }
   header.masthead h1, header.masthead .h1 {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
   header.masthead p {
-    font-size: 1rem;
+    font-size: 1.3rem;
   }
   #name {
-    font-size: 1.4rem;
+    font-size: 1.8rem;
   }
   #and {
-    font-size: 0.7rem;
+    font-size: 1rem;
   }
 }
 
@@ -11229,60 +11229,60 @@ header.masthead p {
 @media (min-width: 769px) and (max-width: 992px) {
   header.masthead {
     padding-top: 5rem;
-    padding-bottom: 4rem;
+    padding-bottom: 2.5rem;
     height: auto;
   }
   header.masthead h1, header.masthead .h1 {
-    font-size: 2rem;
+    font-size: 2.3rem;
   }
   header.masthead p {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
   }
   #name {
-    font-size: 1.6rem;
+    font-size: 2.0rem;
   }
   #and {
-    font-size: 0.8rem;
+    font-size: 1.1rem;
   }
 }
 
 /* 큰 화면 (최소 992px) */
 @media (min-width: 992px) {
   header.masthead {
-    height: 150vh;
-    min-height: 40rem;
-    padding-top: 4rem;
-    padding-bottom: 0;
-  }
-  header.masthead p {
-    font-size: 1.8rem;
-  }
-  #name {
-    font-size: 3rem;
-  }
-  #and {
-    font-size: 1rem;
+    padding-top: 6rem;
+    padding-bottom: 2rem;
   }
   header.masthead h1, header.masthead .h1 {
-    font-size: 2.75rem;
+    font-size: 3rem;
+  }
+  header.masthead p {
+    font-size: 1.6rem;
+  }
+  #name {
+    font-size: 2.2rem;
+  }
+  #and {
+    font-size: 1.2rem;
   }
 }
 
 /* 더 큰 화면 (최소 1200px) */
 @media (min-width: 1200px) {
   header.masthead h1, header.masthead .h1 {
-    font-size: 2.5rem;
+    font-size: 3.2rem;
   }
   header.masthead p {
     font-size: 1.8rem;
   }
   #name {
-    font-size: 3rem;
+    font-size: 2.4rem;
   }
   #and {
-    font-size: 1rem;
+    font-size: 1.3rem;
   }
 }
+
+
 
 
 #portfolio .container-fluid, #portfolio .container-sm, #portfolio .container-md, #portfolio .container-lg, #portfolio .container-xl, #portfolio .container-xxl {
