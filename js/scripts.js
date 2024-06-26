@@ -115,10 +115,16 @@ window.onclick = function(event) {
 
 function shareToBand() {
     const shareUrl = "https://HaTaeWedding.github.io"; // 공유할 URL
-    const encodedShareUrl = encodeURIComponent(shareUrl);
-    const bandAppUrl = `bandapp://create/post?text=${encodedShareUrl}`;
+    const shareText = "태훈&하영 결혼합니다";
+    const imageUrl = "https://hataeWedding.github.io/assets/img/portfolio/wedding/ifwe1.jpg"; // 공유할 이미지 URL
 
-    window.location.href = bandAppUrl;
+    const encodedShareUrl = encodeURIComponent(shareUrl);
+    const encodedShareText = encodeURIComponent(shareText);
+    const encodedImageUrl = encodeURIComponent(imageUrl);
+
+    const bandWebUrl = `https://band.us/plugin/share?body=${encodedShareText}%0A${encodedShareUrl}&route=${encodedShareUrl}&image=${encodedImageUrl}`;
+
+    window.location.href = bandWebUrl;
 }
 
 
