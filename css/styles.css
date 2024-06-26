@@ -644,7 +644,7 @@ progress {
   }
 }
 header .img_main {
-  max-width: 80%;
+  max-width: 100%;
   height: auto;
 }
 
@@ -11159,9 +11159,10 @@ hr.divider-light {
 }
 
 
+/* 공통 스타일 */
 header.masthead {
   padding-top: 6rem;
-  padding-bottom: calc(10rem - 4.5rem);
+  padding-bottom: 2rem;
   background-color: rgba(255, 255, 255);
   /* background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(92, 77, 66, 0.8) 100%), url("../assets/img/main.jpg"); */
   background-position: center;
@@ -11181,6 +11182,71 @@ header.masthead p {
 #and {
   font-size: 0.8rem;
 }
+
+/* 모바일 화면 (최대 576px) */
+@media (max-width: 576px) {
+  header.masthead {
+    padding-top: 4rem;
+    padding-bottom: 2rem;
+    height: auto;
+  }
+  header.masthead h1, header.masthead .h1 {
+    font-size: 1.5rem;
+  }
+  header.masthead p {
+    font-size: 0.9rem;
+  }
+  #name {
+    font-size: 1.2rem;
+  }
+  #and {
+    font-size: 0.6rem;
+  }
+}
+
+/* 태블릿 화면 (576px ~ 768px) */
+@media (min-width: 577px) and (max-width: 768px) {
+  header.masthead {
+    padding-top: 5rem;
+    padding-bottom: 3rem;
+    height: auto;
+  }
+  header.masthead h1, header.masthead .h1 {
+    font-size: 1.8rem;
+  }
+  header.masthead p {
+    font-size: 1rem;
+  }
+  #name {
+    font-size: 1.4rem;
+  }
+  #and {
+    font-size: 0.7rem;
+  }
+}
+
+/* 중간 화면 (768px ~ 992px) */
+@media (min-width: 769px) and (max-width: 992px) {
+  header.masthead {
+    padding-top: 5rem;
+    padding-bottom: 4rem;
+    height: auto;
+  }
+  header.masthead h1, header.masthead .h1 {
+    font-size: 2rem;
+  }
+  header.masthead p {
+    font-size: 1.2rem;
+  }
+  #name {
+    font-size: 1.6rem;
+  }
+  #and {
+    font-size: 0.8rem;
+  }
+}
+
+/* 큰 화면 (최소 992px) */
 @media (min-width: 992px) {
   header.masthead {
     height: 150vh;
@@ -11191,16 +11257,18 @@ header.masthead p {
   header.masthead p {
     font-size: 1.8rem;
   }
-  header #name {
+  #name {
     font-size: 3rem;
   }
-  header #and {
+  #and {
     font-size: 1rem;
   }
   header.masthead h1, header.masthead .h1 {
     font-size: 2.75rem;
   }
 }
+
+/* 더 큰 화면 (최소 1200px) */
 @media (min-width: 1200px) {
   header.masthead h1, header.masthead .h1 {
     font-size: 2.5rem;
@@ -11208,13 +11276,14 @@ header.masthead p {
   header.masthead p {
     font-size: 1.8rem;
   }
-  header #name {
+  #name {
     font-size: 3rem;
   }
-  header #and {
+  #and {
     font-size: 1rem;
   }
 }
+
 
 #portfolio .container-fluid, #portfolio .container-sm, #portfolio .container-md, #portfolio .container-lg, #portfolio .container-xl, #portfolio .container-xxl {
   max-width: 1920px;
