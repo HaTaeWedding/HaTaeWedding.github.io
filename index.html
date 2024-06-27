@@ -23,12 +23,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
-    <!-- SimpleLightbox plugin CSS-->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <!-- <link href="/_custom/mobile/css/styles.css" rel="stylesheet" type="text/css"/> -->
     <link href="css/styles.css" rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!--아이콘-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
 
 </head>
 <body id="page-top">
@@ -80,15 +80,21 @@
 </header>
 
 <!-- About-->
-<section class="page-section bg-primary" id="about">
-    <div class="fade-in-element container px-4 px-lg-5">
+<section class="page-section bg-primary mb-5" id="about">
+    <div class="fade-in-element container px-4 px-lg-5 ">
         <div class="fade-in-element row gx-4 gx-lg-5 justify-content-center">
             <div class="fade-in-element col-lg-8 text-center">
-                <h2 class="size1_2 mt-5 mb-6">초대장(INVITATION)</h2>
+                <h2 class="size1_2 mt-5 mb-6">모시는 글</h2>
                 <hr class="divider divider-light" />
-                <div class="fade-in-element thankText mb-5 size1_4">서로가 마주보며 다져온 사랑을<br>이제 함께 한 곳을 바라보며<br>걸어갈 수 있는 큰 사랑으로<br>키우고자 합니다.<br>저희 두 사람이 사랑의 이름으로<br>지켜나갈 수 있게 앞날을 <br>축복해 주시면 감사하겠습니다.</div>
-                <!-- <a class="btn btn-light btn-xl" href="#services">필요한진 모르겠는데 밑으로 내리는 칸</a> -->
-
+                <div class="fade-in-element mb-7">
+                    <span class="thankText size1_4">사랑하는 자들아<br>하나님이 이같이 우리를 사랑하셨은즉<br>우리도 서로 사랑하는 것이 마땅하도다</span>
+                    <span class="thankText size0_9 mb-7">요한일서 4:11</span>
+                    <span class="thankText size1_4 mt-5">하나님의 섭리 가운데</span>
+                    <span class="thankText size1_4">서로를 사랑함으로</span>
+                    <span class="thankText size1_4">한 가정을 이루고자 합니다.</span>
+                    <span class="thankText size1_4">아름다운 약속의 자리에 귀한 걸음 하시어</span>
+                    <span class="thankText size1_4">저희의 앞날을 위해 축복과 기도 부탁드립니다.</span>
+                </div>
             </div>
         </div>
     </div>
@@ -157,43 +163,18 @@
     </div>
 </section>
 
-<!-- Portfolio-->
+<!-- Portfolio Grid-->
 <div id="portfolio">
-    <div class="fade-in-element container-fluid p-0">
-        <div class="fade-in-element row g-0">
-            <div class="fade-in-element col-lg-4 col-sm-6">
-                <a class="portfolio-box" href="assets/img/portfolio/wedding/field1.jpg">
-                    <img class="img-fluid" src="assets/img/portfolio/wedding/field1.jpg" alt="..." />
-                </a>
-            </div>
-            <div class="fade-in-element col-lg-4 col-sm-6">
-                <a class="portfolio-box" href="assets/img/portfolio/wedding/field2.jpg">
-                    <img class="img-fluid" src="assets/img/portfolio/wedding/field2.jpg" alt="..." />
-                </a>
-            </div>
-            <div class="fade-in-element col-lg-4 col-sm-6">
-                <a class="portfolio-box" href="assets/img/portfolio/wedding/oreum4.jpg">
-                    <img class="img-fluid" src="assets/img/portfolio/wedding/oreum4.jpg" alt="..." />
-                </a>
-            </div>
-            <div class="fade-in-element col-lg-4 col-sm-6">
-                <a class="portfolio-box" href="assets/img/portfolio/wedding/ifwe1.jpg">
-                    <img class="img-fluid" src="assets/img/portfolio/wedding/ifwe1.jpg" alt="..." />
-                </a>
-            </div>
-            <div class="fade-in-element col-lg-4 col-sm-6">
-                <a class="portfolio-box" href="assets/img/portfolio/wedding/jedong1.jpg">
-                    <img class="img-fluid" src="assets/img/portfolio/wedding/jedong1.jpg" alt="..." />
-                </a>
-            </div>
-            <div class="fade-in-element col-lg-4 col-sm-6">
-                <a class="portfolio-box" href="assets/img/portfolio/wedding/jedong3.jpg">
-                    <img class="img-fluid" src="assets/img/portfolio/wedding/jedong3.jpg" alt="..." />
-                </a>
-            </div>
-        </div>
+    <div class="gallery">
+        <a data-fancybox="gallery" href="assets/img/portfolio/wedding/field1.jpg" class="portfolio-box"><img class="img-fluid" src="assets/img/portfolio/wedding/field1.jpg" alt="Image 1"></a>
+        <a data-fancybox="gallery" href="assets/img/portfolio/wedding/field2.jpg" class="portfolio-box"><img class="img-fluid" src="assets/img/portfolio/wedding/field2.jpg" alt="Image 2"></a>
+        <a data-fancybox="gallery" href="assets/img/portfolio/wedding/oreum4.jpg" class="portfolio-box"><img class="img-fluid" src="assets/img/portfolio/wedding/oreum4.jpg" alt="Image 3"></a>
+        <a data-fancybox="gallery" href="assets/img/portfolio/wedding/ifwe1.jpg" class="portfolio-box"><img class="img-fluid" src="assets/img/portfolio/wedding/ifwe1.jpg" alt="Image 4"></a>
+        <a data-fancybox="gallery" href="assets/img/portfolio/wedding/jedong1.jpg" class="portfolio-box"><img class="img-fluid" src="assets/img/portfolio/wedding/jedong1.jpg" alt="Image 5"></a>
+        <a data-fancybox="gallery" href="assets/img/portfolio/wedding/jedong3.jpg" class="portfolio-box"><img class="img-fluid" src="assets/img/portfolio/wedding/jedong3.jpg" alt="Image 6"></a>
     </div>
 </div>
+
 
 <!-- Call to action-->
 <section class="page-section" id="place">
@@ -373,8 +354,6 @@
 </footer>
 <!-- Bootstrap core JS-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-<!-- SimpleLightbox plugin JS-->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
 <!-- Core theme JS-->
 <!-- <script src="/_custom/mobile/js/scripts.js"></script> -->
 <script src="js/scripts.js"></script>
