@@ -130,7 +130,7 @@ Kakao.Share.createDefaultButton({
     objectType: 'feed',
     content: {
         title: '태훈&하영 결혼합니다',
-        description: '10/12(토), 제주썬호텔 3층 Ballroom',
+        description: '10/12(토), 제주 썬호텔 3층 The Ballroom',
         imageUrl: imgUrl + '/assets/img/main.jpg',
         link: {
             // [내 애플리케이션] > [플랫폼] 에서 등록한 사이트 도메인과 일치해야 함
@@ -198,6 +198,6 @@ document.addEventListener("DOMContentLoaded", function() {
         transitionEffect: "fade", // 전환 효과 최소화
         transitionDuration: 300, // 전환 지속 시간 단축
         hideScrollbar: false, // 스크롤바 숨김 비활성화 (옵션, 스크롤바를 항상 보여줌)
-        preload: 1, // 다음 이미지를 미리 로드하여 성능 향상
+        preload: 4, // 다음 이미지를 미리 로드하여 성능 향상
     });
 });
