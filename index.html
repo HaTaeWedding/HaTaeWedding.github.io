@@ -26,7 +26,12 @@
     <!-- Core theme CSS (includes Bootstrap)-->
     <!-- <link href="/_custom/mobile/css/styles.css" rel="stylesheet" type="text/css"/> -->
     <link href="css/styles.css" rel="stylesheet" type="text/css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!--아이콘-->
+
+    <!--아이콘-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- jQuery 포함 -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!--fancybox 포함-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
 
@@ -40,6 +45,57 @@
 </script>
 
 <script src="https://developers.band.us/js/share/loader.js" async></script>
+<script>
+    // 이미지 미리 로드 함수
+    function preloadImages(img) {
+        const src = img.getAttribute('src');
+        const link = document.createElement('link');
+        link.rel = 'preload';
+        link.as = 'image';
+        link.href = src;
+        document.head.appendChild(link);
+    }
+
+    // 모든 이미지에 대해 미리 로드 수행
+    document.querySelectorAll('.gallery img').forEach(preloadImages);
+
+    // Fancybox 플러그인을 활성화합니다.
+    document.addEventListener("DOMContentLoaded", function() {
+        Fancybox.bind("[data-fancybox='gallery']", {
+            Toolbar: {
+                display: [
+                    { id: "prev", position: "center" },
+                    { id: "counter", position: "center" },
+                    { id: "next", position: "center" },
+                    "close",
+                ],
+            },
+            touch: {
+                vertical: false, // 수직 스크롤을 비활성화하여 확대를 막습니다.
+                momentum: false, // 탄력 스크롤을 비활성화합니다.
+            },
+            zoom: false, // 확대 기능 비활성화
+            clickContent: false, // 클릭하여 확대 비활성화
+            clickSlide: false, // 슬라이드 클릭하여 확대 비활성화
+            wheel: false, // 마우스 휠로 확대 비활성화
+            animationEffect: "fade", // 애니메이션 효과 최소화
+            animationDuration: 300, // 애니메이션 지속 시간 단축
+            transitionEffect: "slide", // 전환 효과 최소화
+            transitionDuration: 300, // 전환 지속 시간 단축
+            hideScrollbar: false, // 스크롤바 숨김 비활성화 (옵션, 스크롤바를 항상 보여줌)
+            preload: 4, // 다음 이미지를 미리 로드하여 성능 향상
+            afterLoad: (fancybox, slide) => {
+                const image = slide.$image;
+                if (image) {
+                    console.log("???")
+                    // 확대를 방지하고 블러 효과를 적용
+                    image.style.filter = 'blur(5px)';
+                    image.classList.add('zoomed');
+                }
+            }
+        });
+    });
+</script>
 
 
 <!-- Navigation-->
@@ -87,13 +143,12 @@
                 <h2 class="size1_2 mt-5 mb-6">모시는 글</h2>
                 <hr class="divider divider-light" />
                 <div class="fade-in-element mb-7">
-                    <span class="thankText size1_4">사랑하는 자들아<br>하나님이 이같이 우리를 사랑하셨은즉<br>우리도 서로 사랑하는 것이 마땅하도다</span>
+                    <span class="thankText size1_3">사랑하는 자들아<br>하나님이 이같이 우리를 사랑하셨은즉<br>우리도 서로 사랑하는 것이 마땅하도다</span>
                     <span class="thankText size0_9 mb-7">요한일서 4:11</span>
-                    <span class="thankText size1_4 mt-5">하나님의 섭리 가운데</span>
-                    <span class="thankText size1_4">서로를 사랑함으로</span>
-                    <span class="thankText size1_4">한 가정을 이루고자 합니다.</span>
-                    <span class="thankText size1_4">아름다운 약속의 자리에 귀한 걸음 하시어</span>
-                    <span class="thankText size1_4">저희의 앞날을 위해 축복과 기도 부탁드립니다.</span>
+                    <span class="thankText size1_3 mt-5">하나님의 섭리 가운데</span>
+                    <span class="thankText size1_3">서로를 사랑함으로 한 가정을 이루고자 합니다.</span>
+                    <span class="thankText size1_3">아름다운 약속의 자리에 귀한 걸음 하시어</span>
+                    <span class="thankText size1_3">저희의 앞날을 위해 축복과 기도 부탁드립니다.</span>
                 </div>
             </div>
         </div>
@@ -166,14 +221,27 @@
 <!-- Portfolio Grid-->
 <div id="portfolio">
     <div class="gallery">
-        <a data-fancybox="gallery" href="assets/img/portfolio/wedding/field1.jpg" class="portfolio-box"><img class="img-fluid" src="assets/img/portfolio/wedding/field1.jpg" alt="Image 1"></a>
-        <a data-fancybox="gallery" href="assets/img/portfolio/wedding/field2.jpg" class="portfolio-box"><img class="img-fluid" src="assets/img/portfolio/wedding/field2.jpg" alt="Image 2"></a>
-        <a data-fancybox="gallery" href="assets/img/portfolio/wedding/oreum4.jpg" class="portfolio-box"><img class="img-fluid" src="assets/img/portfolio/wedding/oreum4.jpg" alt="Image 3"></a>
-        <a data-fancybox="gallery" href="assets/img/portfolio/wedding/ifwe1.jpg" class="portfolio-box"><img class="img-fluid" src="assets/img/portfolio/wedding/ifwe1.jpg" alt="Image 4"></a>
-        <a data-fancybox="gallery" href="assets/img/portfolio/wedding/jedong1.jpg" class="portfolio-box"><img class="img-fluid" src="assets/img/portfolio/wedding/jedong1.jpg" alt="Image 5"></a>
-        <a data-fancybox="gallery" href="assets/img/portfolio/wedding/jedong3.jpg" class="portfolio-box"><img class="img-fluid" src="assets/img/portfolio/wedding/jedong3.jpg" alt="Image 6"></a>
+        <a data-fancybox="gallery" href="assets/img/portfolio/wedding/field1.jpg" class="portfolio-box">
+            <img class="img-fluid" src="assets/img/portfolio/wedding/field1.jpg" alt="Image 1" onload="preloadImages(this)">
+        </a>
+        <a data-fancybox="gallery" href="assets/img/portfolio/wedding/field2.jpg" class="portfolio-box">
+            <img class="img-fluid" src="assets/img/portfolio/wedding/field2.jpg" alt="Image 2" onload="preloadImages(this)">
+        </a>
+        <a data-fancybox="gallery" href="assets/img/portfolio/wedding/oreum4.jpg" class="portfolio-box">
+            <img class="img-fluid" src="assets/img/portfolio/wedding/oreum4.jpg" alt="Image 3" onload="preloadImages(this)">
+        </a>
+        <a data-fancybox="gallery" href="assets/img/portfolio/wedding/ifwe1.jpg" class="portfolio-box">
+            <img class="img-fluid" src="assets/img/portfolio/wedding/ifwe1.jpg" alt="Image 4" onload="preloadImages(this)">
+        </a>
+        <a data-fancybox="gallery" href="assets/img/portfolio/wedding/jedong1.jpg" class="portfolio-box">
+            <img class="img-fluid" src="assets/img/portfolio/wedding/jedong1.jpg" alt="Image 5" onload="preloadImages(this)">
+        </a>
+        <a data-fancybox="gallery" href="assets/img/portfolio/wedding/jedong3.jpg" class="portfolio-box">
+            <img class="img-fluid" src="assets/img/portfolio/wedding/jedong3.jpg" alt="Image 6" onload="preloadImages(this)">
+        </a>
     </div>
 </div>
+
 
 
 <!-- Call to action-->
@@ -338,7 +406,7 @@
                         <i class="bi bi-share mar-1"></i>
                         <span class="text-muted">링크 복사</span>
                     </button>
-                    <button type="button" class="btn-xl" onclick="openModal('assets/img/qrCode.png')">
+                    <button type="button" class="btn-xl" onclick="openModal('assets/img/qrCode.jpg')">
                         <i class="fas fa-qrcode mar-1"></i>
                         <span class="text-muted">QR코드</span>
                     </button>
