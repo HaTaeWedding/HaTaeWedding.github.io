@@ -11508,19 +11508,19 @@ header.masthead p {
   }
 }
 
-.size1_4 {
-  font-size: 1.4rem;
+.size1_3 {
+  font-size: 1.3rem;
 }
 
 @media (min-width: 992px) {
-  .size1_4 {
-    font-size: 1.8rem;
+  .size1_3 {
+    font-size: 1.7rem;
   }
 }
 
 @media (min-width: 1200px) {
-  .size1_4 {
-    font-size: 2.2rem;
+  .size1_3 {
+    font-size: 2.1rem;
   }
 }
 
@@ -11983,20 +11983,90 @@ details[open] > summary ~ * {
   }
 }
 
-/*웨딩 사진 관련*/
+/* 웨딩 사진 관련 */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}/* 웨딩 사진 관련 */
 .gallery {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
   justify-content: center;
 }
+
 .gallery a {
   flex: 1 0 calc(33.333% - 10px); /* 3개씩 배치 */
   margin-bottom: 10px;
-}
-.gallery img {
-  width: 100%;
-  height: auto;
-  display: block;
+  position: relative; /* 정사각형 유지를 위해 상대 위치 설정 */
+  width: calc(33.333% - 10px); /* 정사각형 유지를 위해 너비 설정 */
+  padding-top: 33.333%; /* 정사각형 유지를 위해 패딩 설정 */
+  border: 1px solid rgba(220, 220, 220, 0.6); /* 더 얇고 부드러운 구분선 */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* 부드러운 그림자 효과 */
+  border-radius: 8px; /* 구분선에 약간의 둥근 효과 추가 */
 }
 
+.gallery img {
+  position: absolute; /* 이미지를 정사각형 안에 중앙에 위치 */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* 중앙 정렬 */
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+  object-fit: contain; /* 이미지 크기 그대로 정사각형 안에 맞춤 */
+  border-radius: 6px; /* 이미지 테두리 둥글게 */
+}
+
+.gallery a {
+  flex: 1 0 calc(33.333% - 10px); /* 3개씩 배치 */
+  margin-bottom: 10px;
+  position: relative; /* 정사각형 유지를 위해 상대 위치 설정 */
+  width: calc(33.333% - 10px); /* 정사각형 유지를 위해 너비 설정 */
+  padding-top: 33.333%; /* 정사각형 유지를 위해 패딩 설정 */
+  border: 1px solid rgba(220, 220, 220, 0.6); /* 더 얇고 부드러운 구분선 */
+  /*box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); !* 부드러운 그림자 효과 *!*/
+  border-radius: 3px; /* 구분선에 약간의 둥근 효과 추가 */
+}
+
+.gallery img {
+  position: absolute; /* 이미지를 정사각형 안에 중앙에 위치 */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* 중앙 정렬 */
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+  object-fit: contain; /* 이미지 크기 그대로 정사각형 안에 맞춤 */
+}
+
+/* 슬라이드 애니메이션 최적화 */
+.fancybox-slide {
+  transition: transform 0.3s ease-out;
+}
+
+/* Fancybox 모달 이미지에 블러 효과 적용 */
+.fancybox__image {
+  transition: filter 0.3s ease; /* 블러 효과를 위한 트랜지션 추가 */
+}
+
+.fancybox__image.zoomed {
+  filter: blur(5px); /* 블러 효과 */
+}
+
+
+/* 갤러리 이미지의 확대/축소 비활성화 */
+#portfolio .gallery {
+  pointer-events: none; /* 클릭 이벤트 비활성화 */
+  user-select: none; /* 사용자 선택 비활성화 */
+}
+
+#portfolio .gallery a {
+  pointer-events: all; /* 앵커 태그의 클릭 이벤트만 활성화 */
+}
+
+#portfolio .gallery a img {
+  pointer-events: none; /* 이미지는 클릭 불가능하게 설정 */
+}
