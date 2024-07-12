@@ -173,31 +173,3 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(element);
     });
 });
-
-// Fancybox 플러그인을 활성화합니다.
-document.addEventListener("DOMContentLoaded", function() {
-    Fancybox.bind("[data-fancybox='gallery']", {
-        Toolbar: {
-            display: [
-                { id: "prev", position: "center" },
-                { id: "counter", position: "center" },
-                { id: "next", position: "center" },
-                "close",
-            ],
-        },
-        touch: {
-            vertical: false, // 수직 스크롤을 비활성화하여 확대를 막습니다.
-            momentum: false, // 탄력 스크롤을 비활성화합니다.
-        },
-        zoom: false, // 확대 기능 비활성화
-        clickContent: false, // 클릭하여 확대 비활성화
-        clickSlide: false, // 슬라이드 클릭하여 확대 비활성화
-        wheel: false, // 마우스 휠로 확대 비활성화
-        animationEffect: "fade", // 애니메이션 효과 최소화
-        animationDuration: 300, // 애니메이션 지속 시간 단축
-        transitionEffect: "fade", // 전환 효과 최소화
-        transitionDuration: 300, // 전환 지속 시간 단축
-        hideScrollbar: false, // 스크롤바 숨김 비활성화 (옵션, 스크롤바를 항상 보여줌)
-        preload: 4, // 다음 이미지를 미리 로드하여 성능 향상
-    });
-});
