@@ -11229,7 +11229,7 @@ header.masthead p {
 @media (min-width: 769px) and (max-width: 992px) {
   header.masthead {
     padding-top: 5rem;
-    padding-bottom: 40rem;
+    padding-bottom: 20rem;
     height: auto;
   }
   header.masthead h1, header.masthead .h1 {
@@ -11250,7 +11250,7 @@ header.masthead p {
 @media (min-width: 992px) {
   header.masthead {
     padding-top: 6rem;
-    padding-bottom: 21rem;
+    padding-bottom: 39rem;
   }
   header.masthead h1, header.masthead .h1 {
     font-size: 3rem;
