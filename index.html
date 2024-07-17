@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
+    <link href="https://hangeul.pstatic.net/hangeul_static/css/NanumBaReunHiPi.css" rel="stylesheet">
     <!-- Core theme CSS (includes Bootstrap)-->
     <!-- <link href="/_custom/mobile/css/styles.css" rel="stylesheet" type="text/css"/> -->
     <link href="css/styles.css" rel="stylesheet" type="text/css"/>
@@ -71,36 +72,28 @@
                 ],
             },
             contentClick: "iterateZoom", // 클릭하여 확대 비활성화
-            Images: {
-              Panzoom: {
-                maxScale: 0,
-              },
+            Carousel: {
+                Panzoom: {
+                    maxScale: 0, // 확대 비활성화 (최대 스케일을 1로 설정)
+                    minScale: 0, // 확대 비활성화 (최소 스케일을 1로 설정)
+                },
             },
-
             touch: {
                 vertical: false, // 수직 스크롤을 비활성화하여 확대를 막습니다.
                 momentum: false, // 탄력 스크롤을 비활성화합니다.
             },
             zoom: false, // 확대 기능 비활성화
-            clickSlide: false, // 슬라이드 클릭하여 확대 비활성화
-            wheel: false, // 마우스 휠로 확대 비활성화
+            slideClick: false, // 슬라이드 클릭하여 확대 비활성화
+            wheel: true, // 마우스 휠로 확대 비활성화
             animationEffect: "fade", // 애니메이션 효과 최소화
             animationDuration: 300, // 애니메이션 지속 시간 단축
             transitionEffect: "slide", // 전환 효과 최소화
             transitionDuration: 300, // 전환 지속 시간 단축
             hideScrollbar: false, // 스크롤바 숨김 비활성화 (옵션, 스크롤바를 항상 보여줌)
             preload: 4, // 다음 이미지를 미리 로드하여 성능 향상
-            afterLoad: (fancybox, slide) => {
-                const image = slide.$image;
-                if (image) {
-                    console.log("???")
-                    // 확대를 방지하고 블러 효과를 적용
-                    image.style.filter = 'blur(5px)';
-                    image.classList.add('zoomed');
-                }
-            }
         });
     });
+
 </script>
 
 
@@ -149,7 +142,9 @@
                 <h2 class="size1_2 mt-5 mb-6">모시는 글</h2>
                 <hr class="divider divider-light" />
                 <div class="fade-in-element mb-7">
-                    <span class="thankText size1_3">사랑하는 자들아<br>하나님이 이같이 우리를 사랑하셨은즉<br>우리도 서로 사랑하는 것이 마땅하도다</span>
+                    <span class="thankText size1_3">사랑하는 자들아</span>
+                    <span class="thankText size1_3">하나님이 이같이 우리를 사랑하셨은즉</span>
+                    <span class="thankText size1_3">우리도 서로 사랑하는 것이 마땅하도다</span>
                     <span class="thankText size0_9 mb-7">요한일서 4:11</span>
                     <span class="thankText size1_3 mt-5">하나님의 섭리 가운데</span>
                     <span class="thankText size1_3">서로를 사랑함으로 한 가정을 이루고자 합니다.</span>
@@ -183,40 +178,38 @@
         </div>
 
         <div class="fade-in-element box1 mt-6 text-center">
-            <h3 class="text-muted h3 mb-2">신랑측 혼주</h3>
+            <h3 class="h3 mb-2">신랑측 혼주</h3>
             <p>
-                <span class="h3 text-muted mb-0">아버지</span>
-                <span class="parentName text-muted mb-0">고석진</span>
+                <span class="h3 mb-0">아버지</span>
+                <span class="parentName mb-0">고석진</span>
             </p>
             <a href="tel:01036924999"><i class="iconMarPar bi bi-telephone fs-2-par mb-3 text-muted"></i></a>
             <a href="sms:01036924999"><i class="bi bi-chat-dots fs-2-par mb-3 text-muted"></i></a>
         </div>
 
         <div class="fade-in-element box2 mt-6 text-center">
-            <h3 class="text-muted h3 mb-2">신부측 혼주</h3>
+            <h3 class="h3 mb-2">신부측 혼주</h3>
             <p>
-                <span class="h3 text-muted mb-0">아버지 (故)</span>
-                <span class="parentName text-muted mb-0">김태완</span>
+                <span class="h3 mb-0">아버지 (故)</span>
+                <span class="parentName mb-0">김태완</span>
             </p>
             <!--            <a href="tel:01035599398"><i id="iconMarPar" class="bi bi-telephone fs-2-par mb-3 text-muted"></i></a>-->
             <!--            <a href="sms:01035599398"><i class="bi bi-chat-dots fs-2-par mb-3 text-muted"></i></a>-->
         </div>
 
         <div class="fade-in-element box3 mt-5 text-center">
-            <h3 class="text-muted h3 mb-2">신랑측 혼주</h3>
             <p>
-                <span class="h3 text-muted mb-0">어머니</span>
-                <span class="parentName text-muted mb-0">김원숙</span>
+                <span class="h3 mb-0">어머니</span>
+                <span class="parentName mb-0">김원숙</span>
             </p>
             <a href="tel:01032315261"><i class="iconMarPar bi bi-telephone fs-2-par mb-5 text-muted"></i></a>
             <a href="sms:01032315261"><i class="bi bi-chat-dots fs-2-par mb-5 text-muted"></i></a>
         </div>
 
         <div class="fade-in-element box4 mt-5 text-center">
-            <h3 class="text-muted h3 mb-2">신부측 혼주</h3>
             <p>
-                <span class="h3 text-muted mb-0">어머니</span>
-                <span class="parentName text-muted mb-0">박민숙</span>
+                <span class="h3 mb-0">어머니</span>
+                <span class="parentName mb-0">박민숙</span>
             </p>
             <a href="tel:01035599398"><i class="iconMarPar bi bi-telephone fs-2-par mb-5 text-muted"></i></a>
             <a href="sms:01035599398"><i class="bi bi-chat-dots fs-2-par mb-5 text-muted"></i></a>
@@ -258,18 +251,29 @@
 
         <div id="map" class="mb-3"></div>
         <div class="fade-in-element btn-container">
-            <a target="_blank" class="btn-xl mb-2" href="https://kko.to/_m3grnSdBj">카카오맵 보기</a>
-            <a target="_blank" class="btn-xl mb-2" href="https://naver.me/Go57I9QC">네이버맵 보기</a>
-            <a target="_blank" class="btn-xl mb-2" href="https://www.google.com/maps/place/%EC%A0%9C%EC%A3%BC%ED%8A%B9%EB%B3%84%EC%9E%90%EC%B9%98%EB%8F%84+%EC%A0%9C%EC%A3%BC%EC%8B%9C+%ED%8A%B9%EB%B3%84%EC%9E%90%EC%B9%98%EB%8F%84+%EC%97%B0%EB%8F%99+%EC%82%BC%EB%AC%B4%EB%A1%9C+67+%EC%A0%9C%EC%A3%BC%EC%8D%AC%ED%98%B8%ED%85%94/@33.4899984,126.4938714,17z/data=!4m9!1m2!2m1!1z7KCc7KO8IOyNrO2YuO2FlA!3m5!1s0x350cfb0e25ab8ab7:0xe205d6003bb72c38!8m2!3d33.4899984!4d126.4938714!16s%2Fg%2F1tpppqp0?source=lnms">구글맵 보기</a>
-            <a target="_blank" class="btn-xl mb-2" href="https://tmap.life/cfac5b42">티맵 보기</a>
-            <a class="btn-xl mb-2" href="#services">도저히 모르겠다.</a>
+            <a target="_blank" class="btn-xl mb-2 text-muted" href="https://kko.to/_m3grnSdBj">
+                <img src="assets/icons/kakaonavi_btn_medium.png" alt="KakaoMap" class="imgSize mar-1">
+                카카오맵 보기
+            </a>
+            <a target="_blank" class="btn-xl mb-2 text-muted" href="https://naver.me/Go57I9QC">
+                <img src="assets/icons/navermap.webp" alt="NaverMap" class="imgSize mar-1">
+                네이버맵 보기
+            </a>
+            <a target="_blank" class="btn-xl mb-2 text-muted" href="https://www.google.com/maps/place/%EC%A0%9C%EC%A3%BC%ED%8A%B9%EB%B3%84%EC%9E%90%EC%B9%98%EB%8F%84+%EC%A0%9C%EC%A3%BC%EC%8B%9C+%ED%8A%B9%EB%B3%84%EC%9E%90%EC%B9%98%EB%8F%84+%EC%97%B0%EB%8F%99+%EC%82%BC%EB%AC%B4%EB%A1%9C+67+%EC%A0%9C%EC%A3%BC%EC%8D%AC%ED%98%B8%ED%85%94/@33.4899984,126.4938714,17z/data=!4m9!1m2!2m1!1z7KCc7KO8IOyNrO2YuO2FlA!3m5!1s0x350cfb0e25ab8ab7:0xe205d6003bb72c38!8m2!3d33.4899984!4d126.4938714!16s%2Fg%2F1tpppqp0?source=lnms">
+                <img src="assets/icons/google-maps.png" alt="GoogleMaps" class="imgSize mar-1">
+                구글맵 보기
+            </a>
+            <a target="_blank" class="btn-xl mb-2 text-muted" href="https://tmap.life/cfac5b42">
+                <img src="assets/icons/tmap.webp" alt="TMap" class="imgSize mar-1">
+                티맵 보기
+            </a>
         </div>
 
         <p class="mt-3">
             <span class="size1_2">제주 썬호텔 3층 The Ballroom</span><br><br>
-            <span class="size0_9">제주특별자치도 제주시 삼무로 67 제주 썬호텔</span>
+            <span class="size0_9">제주 제주시 삼무로 67 제주 썬호텔</span>
         <div class="fade-in-element center-container mt-1">
-            <button class="btn-xl" onclick="clip('제주특별자치도 제주시 삼무로 67 제주 썬호텔')">
+            <button class="btn-xl" onclick="clip('제주 제주시 삼무로 67 제주 썬호텔')">
                 <i class="bi bi-clipboard mar-1"></i>
                 <span class="text-muted">호텔 주소 복사</span>
             </button>
@@ -305,7 +309,7 @@
             <div class="fade-in-element col-lg-8 col-xl-6 text-center">
                 <h2 class="mt-4">안내사항</h2>
                 <hr class="divider divider-light" />
-                <img style="width: 95%; text-align: center" class="mb-3" src="assets/img/minimap.png" alt="..." />
+                <img style="width: 95%; text-align: center" class="mb-3" src="assets/img/minimap.jpg" alt="..." />
 
                 <div class="fade-in-element info-section">
                     <span class="info-title"><i class="fas fa-info-circle"></i>주차장 관련</span>
@@ -330,10 +334,8 @@
                 </div>
                 <div class="fade-in-element info-section">
                     <span class="info-title"><i class="fas fa-info-circle"></i>피로연 장소 관련</span>
-                    <span class="info-detail">- 본식이 끝난 후 편안한 식사 자리를 가질 수 있도록 3층 홀과 1층 오픈홀에서도 피로연이 진행됩니다.</span>
-                    <span class="info-detail">- 신랑 신부의 친척 및 양가 부모 지인 분들께서는 3층 홀</span>
-                    <span class="info-detail">- 신랑 신부 친구분들 께서는 1층 에서 피로연을 즐기시면 감사하겠습니다.</span>
-
+                    <span class="info-detail">- 본식이 끝난 후 편안한 식사 자리를 가지실 수 있도록 3층 홀과 1층 가든 뷔페에서도 17시까지 피로연이 진행됩니다.</span>
+                    <span class="info-detail">- 신랑 신부의 친척 및 양가 부모님의 지인분들께서는 3층 홀,<br>신랑 신부 친구분들께서는 1층 오픈홀에서 피로연을 즐기시면 감사하겠습니다.</span>
                 </div>
             </div>
         </div>
@@ -348,7 +350,7 @@
                 <h2 class="mt-4">마음 전하실 곳</h2>
                 <hr class="divider divider-light" />
                 <details>
-                    <summary class="text-muted mb-5 size1_2">신랑측 계좌번호</summary>
+                    <summary class="text-muted mb-5 size1_2">신랑측</summary>
                     <div class="fade-in-element tpt mb-2">
                         <span class="account-info">신랑 고태훈 신한 110-541-217002</span>
                         <button class="btn-xl mb-2" onclick="clip('110541217002')">
@@ -372,7 +374,7 @@
                     </div>
                 </details>
                 <details>
-                    <summary class="text-muted mt-4 mb-5 size1_2">신부측 계좌번호</summary>
+                    <summary class="text-muted mt-4 mb-5 size1_2">신부측</summary>
                     <div class="fade-in-element tpt mb-2">
                         <span class="account-info">신부 김하영 신한 110-210-434094</span>
                         <button class="btn-xl mb-2" onclick="clip('110210434094')">
@@ -405,7 +407,7 @@
                         <span class="text-muted">카카오톡 공유</span>
                     </a>
                     <button type="button" class="btn-xl" onclick="shareToBand()">
-                        <img src="https://hataewedding.github.io/assets/img/naverBand.webp" alt="네이버밴드 공유" class="imgSize mar-1"/>
+                        <img src="assets/icons/naverBand.webp" alt="네이버밴드 공유" class="imgSize mar-1"/>
                         <span class="text-muted">네이버밴드 공유</span>
                     </button>
                     <button type="button" class="btn-xl" onclick="clip('https://hataewedding.github.io')">
