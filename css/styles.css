@@ -127,11 +127,11 @@ h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
   line-height: 1.2;
 }
 parentName, .parentName {
-  font-size: calc(0.9rem + 0.3vw);
+  font-size: calc(1.3rem + 0.3vw);
 }
 @media (min-width: 1200px) {
   parentName, .parentName {
-    font-size: 1.5rem;
+    font-size: 2.0rem;
   }
 }
 
@@ -154,7 +154,7 @@ h2, .h2 {
 }
 
 h3, .h3 {
-  font-size: calc(0.7rem + 0.3vw);
+  font-size: calc(0.8rem + 0.3vw);
 }
 @media (min-width: 1200px) {
   h3, .h3 {
@@ -11187,7 +11187,7 @@ header.masthead p {
 @media (max-width: 576px) {
   header.masthead {
     padding-top: 4rem;
-    padding-bottom: 4rem;
+    padding-bottom: 11rem;
     height: auto;
   }
   header.masthead h1, header.masthead .h1 {
@@ -11208,7 +11208,7 @@ header.masthead p {
 @media (min-width: 577px) and (max-width: 768px) {
   header.masthead {
     padding-top: 5rem;
-    padding-bottom: 13rem;
+    padding-bottom: 20rem;
     height: auto;
   }
   header.masthead h1, header.masthead .h1 {
@@ -11229,7 +11229,7 @@ header.masthead p {
 @media (min-width: 769px) and (max-width: 992px) {
   header.masthead {
     padding-top: 5rem;
-    padding-bottom: 30rem;
+    padding-bottom: 40rem;
     height: auto;
   }
   header.masthead h1, header.masthead .h1 {
@@ -11250,7 +11250,7 @@ header.masthead p {
 @media (min-width: 992px) {
   header.masthead {
     padding-top: 6rem;
-    padding-bottom: 22rem;
+    padding-bottom: 21rem;
   }
   header.masthead h1, header.masthead .h1 {
     font-size: 3rem;
@@ -11535,6 +11535,7 @@ header.masthead p {
 .imgSize {
   width: 1.2rem;
   height: 1.2rem;
+  border-radius: 4px;
 }
 .img_pop {
   display: none;
