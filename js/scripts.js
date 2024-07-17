@@ -131,7 +131,7 @@ Kakao.Share.createDefaultButton({
     content: {
         title: '태훈&하영 결혼합니다',
         description: '10/12(토), 제주 썬호텔 3층 The Ballroom',
-        imageUrl: imgUrl + '/assets/img/main.jpg',
+        imageUrl: imgUrl + '/assets/img/kakaoShare.jpg',
         link: {
             // [내 애플리케이션] > [플랫폼] 에서 등록한 사이트 도메인과 일치해야 함
             mobileWebUrl: 'https://hataewedding.github.io',
