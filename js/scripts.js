@@ -167,3 +167,52 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(element);
     });
 });
+
+// Fancybox 플러그인을 활성화합니다.
+document.addEventListener("DOMContentLoaded", function() {
+    Fancybox.bind("[data-fancybox='gallery']", {
+        Toolbar: {
+            display: {
+                left: [],
+                middle : ["infobar",],
+                right: [
+                    "close",
+                ],
+            }
+        },
+        Images: {
+            protected: true
+        },
+        backdropClick: true,
+        contentClick: false, // 클릭하여 확대 비활성화
+        zoom: false, // 확대 기능 비활성화
+        wheel: true, // 마우스 휠로 확대 비활성화
+        hideScrollbar: true, // 스크롤바 숨김 비활성화 (옵션, 스크롤바를 항상 보여줌)
+        preload: 2, // 다음 이미지를 미리 로드하여 성능 향상
+        transitionEffect: false, // 전환 효과 비활성화
+        animationEffect: false, // 애니메이션 효과 비활성화
+        loop: false // 루프 활성화
+    });
+
+    // 우클릭 방지
+    document.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+    });
+
+    // 모바일에서 길게 눌렀을 때의 동작을 막기
+    document.addEventListener('touchstart', function(e) {
+        if (e.touches.length > 1) {
+            e.preventDefault();
+        }
+    }, { passive: false });
+
+    document.addEventListener('touchend', function(e) {
+        var now = new Date().getTime();
+        if (now - lastTouchEnd <= 300) {
+            e.preventDefault();
+        }
+        lastTouchEnd = now;
+    }, false);
+
+    var lastTouchEnd = 0;
+});
